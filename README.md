@@ -1,6 +1,6 @@
 # egg-ts-pkg-sqlite3
 
-    egg-typescripte-pkg with better-sqlite3-pool
+   egg-typescripte-pkg with better-sqlite3-pool
 
 ## Build
     sh build.sh
