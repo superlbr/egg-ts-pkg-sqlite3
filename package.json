@@ -1,0 +1,72 @@
+{
+  "name": "egg-ts-pkg",
+  "version": "1.0.0",
+  "description": "boilerplate for egg-typescript-pkg",
+  "private": true,
+  "egg": {
+    "typescript": true,
+    "declarations": true
+  },
+  "scripts": {
+    "start": "egg-scripts start --daemon --title=egg-server-pkg",
+    "stop": "egg-scripts stop --title=egg-server-pkg",
+    "dev": "egg-bin dev",
+    "debug": "egg-bin debug",
+    "test-local": "egg-bin test",
+    "test": "npm run lint -- --fix && npm run test-local",
+    "cov": "egg-bin cov",
+    "tsc": "ets && tsc -p tsconfig.json",
+    "ci": "npm run lint && npm run cov && npm run tsc",
+    "autod": "autod",
+    "lint": "eslint . --ext .ts --resolve-plugins-relative-to .",
+    "clean": "ets clean"
+  },
+  "dependencies": {
+    "better-sqlite-pool": "^0.3.1",
+    "better-sqlite3": "^7.6.2",
+    "egg": "^2.36.0",
+    "egg-scripts": "^2.17.0"
+  },
+  "devDependencies": {
+    "@eggjs/tsconfig": "^1.1.0",
+    "@types/mocha": "^9.1.0",
+    "@types/node": "^18.0.0",
+    "@types/supertest": "^2.0.0",
+    "autod": "^3.0.1",
+    "autod-egg": "^1.1.0",
+    "egg-bin": "^5.2.0",
+    "egg-ci": "^2.1.0",
+    "egg-mock": "^4.2.0",
+    "eslint": "^8.21.0",
+    "eslint-config-egg": "^12.0.0",
+    "typescript": "^4.7.0"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "bin": "pkg-entry.js",
+  "pkg": {
+    "scripts": [
+      "./app.js",
+      "./app/**/*.js",
+      "./config/**/*.js"
+    ],
+    "assets": [
+      "./app/public/**/*",
+      "./node_modules/nanoid/**/*.js",
+      "./node_modules/nanoid/**/*.cjs"
+    ]
+  },
+  "ci": {
+    "version": "14, 16, 18"
+  },
+  "eslintIgnore": [
+    "coverage"
+  ],
+  "author": "superlbr<superlbr@126.com>",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:superlbr/egg-ts-pkg-sqlite3.git"
+  },
+  "license": "MIT"
+}
